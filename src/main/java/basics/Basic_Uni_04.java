@@ -1,3 +1,5 @@
+///usr/bin/env jbang "$0" "$@" ; exit $?
+//DEPS io.smallrye.reactive:mutiny:0.10.0
 package basics;
 
 import io.smallrye.mutiny.Uni;
@@ -10,7 +12,7 @@ public class Basic_Uni_04 {
     System.out.println("️⚡️ Uni from supplier with state");
 
     Uni<Integer> uniFromSupplierAndState = Uni.createFrom().item(AtomicInteger::new, i -> i.addAndGet(10));
-    
+
     for (var i = 0; i < 5; i++) {
       uniFromSupplierAndState.subscribe().with(System.out::println);
     }
