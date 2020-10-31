@@ -10,7 +10,7 @@ import java.util.concurrent.CompletionStage;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Basic_Multi_05 {
+public class Multi_05 {
 
   public static void main(String[] args) throws InterruptedException {
     System.out.println("⚡️ Multi by repeating");

@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Basic_Multi_01 {
+public class Multi_01 {
 
   public static void main(String[] args) {
     System.out.println("⚡️ Hello world");

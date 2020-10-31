@@ -6,7 +6,7 @@ import io.smallrye.mutiny.Uni;
 
 import java.util.Optional;
 
-public class Basic_Uni_10 {
+public class Uni_10 {
 
   public static void main(String[] args) {
     System.out.println("⚡️ Misc");

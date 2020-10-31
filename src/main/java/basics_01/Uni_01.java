@@ -4,7 +4,7 @@ package basics_01;
 
 import io.smallrye.mutiny.Uni;
 
-public class Basic_Uni_01 {
+public class Uni_01 {
 
   public static void main(String[] args) {
     System.out.println("⚡️ Hello world");

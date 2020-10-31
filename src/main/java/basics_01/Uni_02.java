@@ -6,7 +6,7 @@ import io.smallrye.mutiny.Uni;
 import io.smallrye.mutiny.subscription.UniSubscriber;
 import io.smallrye.mutiny.subscription.UniSubscription;
 
-public class Basic_Uni_02 {
+public class Uni_02 {
 
   public static void main(String[] args) {
     System.out.println("⚡️ Hello world with UniSubscriber");

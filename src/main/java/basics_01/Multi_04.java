@@ -9,7 +9,7 @@ import org.reactivestreams.Subscription;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 
-public class Basic_Multi_04 {
+public class Multi_04 {
 
   public static void main(String[] args) {
 

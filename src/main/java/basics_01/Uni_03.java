@@ -6,7 +6,7 @@ import io.smallrye.mutiny.Uni;
 
 import java.util.Random;
 
-public class Basic_Uni_03 {
+public class Uni_03 {
 
   public static void main(String[] args) {
     System.out.println("️⚡️ Uni from supplier");

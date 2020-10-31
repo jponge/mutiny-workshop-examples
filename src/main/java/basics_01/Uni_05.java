@@ -6,7 +6,7 @@ import io.smallrye.mutiny.Uni;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Basic_Uni_05 {
+public class Uni_05 {
 
   public static void main(String[] args) {
     System.out.println("️⚡️ Deferred Uni");

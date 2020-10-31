@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class Basic_Multi_03 {
+public class Multi_03 {
 
   public static void main(String[] args) throws InterruptedException {
     System.out.println("⚡️ Multi from emitter");

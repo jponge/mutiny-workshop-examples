@@ -6,7 +6,7 @@ import io.smallrye.mutiny.Uni;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Basic_Uni_07 {
+public class Uni_07 {
 
   public static void main(String[] args) {
     System.out.println("⚡️ Uni from emitter and state");

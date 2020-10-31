@@ -7,7 +7,7 @@ import io.smallrye.mutiny.Uni;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ForkJoinPool;
 
-public class Basic_Uni_06 {
+public class Uni_06 {
 
   public static void main(String[] args) throws InterruptedException {
     System.out.println("⚡️ Uni from emitter");

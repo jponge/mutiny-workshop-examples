@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 
 import static java.util.concurrent.CompletableFuture.delayedExecutor;
 
-public class Basic_Uni_09 {
+public class Uni_09 {
 
   public static void main(String[] args) throws InterruptedException {
     System.out.println("⚡️ Uni from CompletionStage");

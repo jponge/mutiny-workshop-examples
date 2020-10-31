@@ -6,7 +6,7 @@ import io.smallrye.mutiny.Multi;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
-public class Basic_Multi_02 {
+public class Multi_02 {
 
   public static void main(String[] args) {
     System.out.println("⚡️ Hello world with subscriber");
