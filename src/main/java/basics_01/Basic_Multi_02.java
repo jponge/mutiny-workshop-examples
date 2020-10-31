@@ -1,6 +1,6 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //DEPS io.smallrye.reactive:mutiny:0.10.1
-package basics;
+package basics_01;
 
 import io.smallrye.mutiny.Multi;
 import org.reactivestreams.Subscriber;
