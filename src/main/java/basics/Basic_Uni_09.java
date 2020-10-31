@@ -1,21 +1,25 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.10.0
+//DEPS io.smallrye.reactive:mutiny:0.10.1
 package basics;
 
 import io.smallrye.mutiny.Uni;
 
-import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.*;
+
+import static java.util.concurrent.CompletableFuture.delayedExecutor;
 
 public class Basic_Uni_09 {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException {
     System.out.println("⚡️ Uni from CompletionStage");
 
-    var cs = new CompletableFuture<String>();
+    var cs = CompletableFuture
+      .supplyAsync(() -> "Hello!", delayedExecutor(1, TimeUnit.SECONDS))
+      .thenApply(String::toUpperCase);
 
     Uni.createFrom().completionStage(cs)
       .subscribe().with(System.out::println, failure -> System.out.println(failure.getMessage()));
 
-    cs.complete("Ok");
+    Thread.sleep(2000);
   }
 }
