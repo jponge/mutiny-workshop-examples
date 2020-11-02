@@ -34,7 +34,11 @@ public class Multi_09 {
 
         persons
                 .transform().byFilteringItemsWith(person -> person.city.equals("Nevers"))
-                .collectItems().in(StringBuilder::new, (acc, next) -> acc.append("\n").append(" -> ").append(next.identifier))
+                .collectItems().in(
+                        StringBuilder::new,
+                        (acc, next) -> acc.append("\n")
+                                .append(" -> ")
+                                .append(next.identifier))
                 .subscribe().with(list -> System.out.println("They live in Nevers: " + list));
 
         System.out.println();
