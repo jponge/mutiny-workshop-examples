@@ -10,28 +10,28 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class Multi_03 {
 
-  public static void main(String[] args) throws InterruptedException {
-    System.out.println("⚡️ Multi from emitter");
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("⚡️ Multi from emitter");
 
-    ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
 
-    AtomicReference<ScheduledFuture<?>> ref = new AtomicReference<>();
-    AtomicInteger counter = new AtomicInteger();
-    CountDownLatch latch = new CountDownLatch(1);
+        AtomicReference<ScheduledFuture<?>> ref = new AtomicReference<>();
+        AtomicInteger counter = new AtomicInteger();
+        CountDownLatch latch = new CountDownLatch(1);
 
-    Multi.createFrom().emitter(emitter -> {
-      ref.set(service.scheduleAtFixedRate(() -> {
-        emitter.emit("tick");
-        if (counter.getAndIncrement() == 5) {
-          ref.get().cancel(true);
-          emitter.complete();
-          latch.countDown();
-        }
-      }, 0, 500, TimeUnit.MILLISECONDS));
-    })
-      .subscribe().with(System.out::println, Throwable::printStackTrace, () -> System.out.println("Done!"));
+        Multi.createFrom().emitter(emitter -> {
+            ref.set(service.scheduleAtFixedRate(() -> {
+                emitter.emit("tick");
+                if (counter.getAndIncrement() == 5) {
+                    ref.get().cancel(true);
+                    emitter.complete();
+                    latch.countDown();
+                }
+            }, 0, 500, TimeUnit.MILLISECONDS));
+        })
+                .subscribe().with(System.out::println, Throwable::printStackTrace, () -> System.out.println("Done!"));
 
-    latch.await();
-    service.shutdown();
-  }
+        latch.await();
+        service.shutdown();
+    }
 }

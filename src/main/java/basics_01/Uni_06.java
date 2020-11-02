@@ -9,21 +9,21 @@ import java.util.concurrent.ForkJoinPool;
 
 public class Uni_06 {
 
-  public static void main(String[] args) throws InterruptedException {
-    System.out.println("⚡️ Uni from emitter");
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("⚡️ Uni from emitter");
 
-    ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
-    CountDownLatch emitterLatch = new CountDownLatch(1);
+        ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
+        CountDownLatch emitterLatch = new CountDownLatch(1);
 
-    Uni<String> uniFromEmitter = Uni.createFrom().emitter(emitter -> {
-      forkJoinPool.submit(() -> {
-        emitter.complete("Hello");
-        emitterLatch.countDown();
-      });
-    });
+        Uni<String> uniFromEmitter = Uni.createFrom().emitter(emitter -> {
+            forkJoinPool.submit(() -> {
+                emitter.complete("Hello");
+                emitterLatch.countDown();
+            });
+        });
 
-    uniFromEmitter.subscribe().with(System.out::println);
+        uniFromEmitter.subscribe().with(System.out::println);
 
-    emitterLatch.await();
-  }
+        emitterLatch.await();
+    }
 }

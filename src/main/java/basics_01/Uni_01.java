@@ -6,11 +6,11 @@ import io.smallrye.mutiny.Uni;
 
 public class Uni_01 {
 
-  public static void main(String[] args) {
-    System.out.println("⚡️ Hello world");
+    public static void main(String[] args) {
+        System.out.println("⚡️ Hello world");
 
-    Uni<String> uni = Uni.createFrom().item("Hello, world!");
+        Uni<String> uni = Uni.createFrom().item("Hello, world!");
 
-    uni.subscribe().with(System.out::println);
-  }
+        uni.subscribe().with(System.out::println);
+    }
 }

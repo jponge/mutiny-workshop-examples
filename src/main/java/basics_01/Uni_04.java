@@ -8,13 +8,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Uni_04 {
 
-  public static void main(String[] args) {
-    System.out.println("️⚡️ Uni from supplier with state");
+    public static void main(String[] args) {
+        System.out.println("️⚡️ Uni from supplier with state");
 
-    Uni<Integer> uniFromSupplierAndState = Uni.createFrom().item(AtomicInteger::new, i -> i.addAndGet(10));
+        Uni<Integer> uniFromSupplierAndState = Uni.createFrom().item(AtomicInteger::new, i -> i.addAndGet(10));
 
-    for (var i = 0; i < 5; i++) {
-      uniFromSupplierAndState.subscribe().with(System.out::println);
+        for (var i = 0; i < 5; i++) {
+            uniFromSupplierAndState.subscribe().with(System.out::println);
+        }
     }
-  }
 }

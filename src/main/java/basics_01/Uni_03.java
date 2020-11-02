@@ -8,15 +8,15 @@ import java.util.Random;
 
 public class Uni_03 {
 
-  public static void main(String[] args) {
-    System.out.println("️⚡️ Uni from supplier");
+    public static void main(String[] args) {
+        System.out.println("️⚡️ Uni from supplier");
 
-    Random random = new Random();
+        Random random = new Random();
 
-    Uni<Integer> uniFromSupplier = Uni.createFrom().item(random::nextInt);
+        Uni<Integer> uniFromSupplier = Uni.createFrom().item(random::nextInt);
 
-    for (var i = 0; i < 5; i++) {
-      uniFromSupplier.subscribe().with(System.out::println);
+        for (var i = 0; i < 5; i++) {
+            uniFromSupplier.subscribe().with(System.out::println);
+        }
     }
-  }
 }

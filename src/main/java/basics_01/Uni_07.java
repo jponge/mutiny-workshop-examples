@@ -8,14 +8,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Uni_07 {
 
-  public static void main(String[] args) {
-    System.out.println("⚡️ Uni from emitter and state");
+    public static void main(String[] args) {
+        System.out.println("⚡️ Uni from emitter and state");
 
-    Uni<Integer> uniFromEmitterAndState = Uni.createFrom()
-      .emitter(AtomicInteger::new, (i, e) -> e.complete(i.addAndGet(10)));
+        Uni<Integer> uniFromEmitterAndState = Uni.createFrom()
+                .emitter(AtomicInteger::new, (i, e) -> e.complete(i.addAndGet(10)));
 
-    for (var i = 0; i < 5; i++) {
-      uniFromEmitterAndState.subscribe().with(System.out::println);
+        for (var i = 0; i < 5; i++) {
+            uniFromEmitterAndState.subscribe().with(System.out::println);
+        }
     }
-  }
 }
