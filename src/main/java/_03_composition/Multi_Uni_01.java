@@ -1,0 +1,21 @@
+///usr/bin/env jbang "$0" "$@" ; exit $?
+//DEPS io.smallrye.reactive:mutiny:0.10.1
+package _03_composition;
+
+import io.smallrye.mutiny.Multi;
+import io.smallrye.mutiny.Uni;
+
+public class Multi_Uni_01 {
+
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("⚡️ Multi <-> Uni");
+
+        Multi.createFrom().range(1, 10)
+                .toUni()
+                .subscribe().with(System.out::println);
+
+        Uni.createFrom().item(123)
+                .toMulti()
+                .subscribe().with(System.out::println);
+    }
+}
