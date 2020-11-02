@@ -1,6 +1,6 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //DEPS io.smallrye.reactive:mutiny:0.10.1
-package _03_composition;
+package _03_composition_transformation;
 
 import static java.util.concurrent.CompletableFuture.delayedExecutor;
 import static java.util.concurrent.CompletableFuture.supplyAsync;
@@ -13,10 +13,10 @@ import java.util.concurrent.atomic.AtomicLong;
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 
-public class Multi_06 {
+public class Multi_07 {
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("⚡️ Multi concatenation");
+        System.out.println("⚡️ Multi combination");
 
         var firstGenerator = new Generator(0);
         var secondGenerator = new Generator(100);
@@ -28,7 +28,8 @@ public class Multi_06 {
         var second = Multi.createBy().repeating()
                 .uni(secondGenerator::next).atMost(10);
 
-        Multi.createBy().concatenating().streams(first, second)
+        Multi.createBy().combining().streams(first, second)
+                .asTuple()  // also try lastItems()
                 .onTermination().invoke(latch::countDown)
                 .subscribe().with(System.out::println);
 

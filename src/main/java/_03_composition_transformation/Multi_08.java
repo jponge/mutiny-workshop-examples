@@ -1,6 +1,6 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //DEPS io.smallrye.reactive:mutiny:0.10.1
-package _03_composition;
+package _03_composition_transformation;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;

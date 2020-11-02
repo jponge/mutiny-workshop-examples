@@ -1,26 +1,28 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
 //DEPS io.smallrye.reactive:mutiny:0.10.1
-package _03_composition;
+package _03_composition_transformation;
+
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
+
+import io.smallrye.mutiny.Multi;
 
 import static java.util.concurrent.CompletableFuture.delayedExecutor;
 import static java.util.concurrent.CompletableFuture.runAsync;
 
-import java.util.concurrent.*;
-
-import io.smallrye.mutiny.Multi;
-
-public class Multi_03 {
+public class Multi_04 {
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("⚡️ Multi transformations to Multi");
+        System.out.println("⚡️ Multi transformations to Multi with shortcuts");
 
         CountDownLatch latch = new CountDownLatch(1);
 
         Multi.createFrom().range(1, 100)
-                .transform().byFilteringItemsWith(n -> n % 2 == 0)
+                .filter(n -> n % 2 == 0)
                 .transform().byTakingLastItems(5)
-                .onItem().transformToMultiAndMerge(n -> query(n))   // try transformToMultiAndConcatenate
-                .onItem().transform(n -> "[" + n + "]")
+                .flatMap(n -> query(n))     // try concatMap
+                .map(n -> "[" + n + "]")
                 .onCompletion().invoke(latch::countDown)
                 .subscribe().with(System.out::println);
 
