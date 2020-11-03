@@ -16,12 +16,28 @@ public class Multi_09 {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("⚡️ Multi aggregates");
 
+        // ------------------------------------------------------------------ //
+
         var persons = Multi.createBy().repeating()
                 .supplier(() -> generate()).atMost(100);
+
+        // ------------------------------------------------------------------ //
+
+        System.out.println();
+
+        persons
+                .onItem().scan(() -> 0, (count, next) -> count + 1)
+                .subscribe().with(count -> System.out.println("We have " + count + " persons"));
+
+        // ------------------------------------------------------------------ //
+
+        System.out.println();
 
         persons
                 .collectItems().with(Collectors.counting())
                 .subscribe().with(count -> System.out.println("We have " + count + " persons"));
+
+        // ------------------------------------------------------------------ //
 
         System.out.println();
 
@@ -29,6 +45,8 @@ public class Multi_09 {
                 .transform().byFilteringItemsWith(person -> person.city.equals("Nevers"))
                 .collectItems().asList()
                 .subscribe().with(list -> System.out.println("They live in Nevers: " + list));
+
+        // ------------------------------------------------------------------ //
 
         System.out.println();
 
@@ -40,6 +58,8 @@ public class Multi_09 {
                                 .append(" -> ")
                                 .append(next.identifier))
                 .subscribe().with(list -> System.out.println("They live in Nevers: " + list));
+
+        // ------------------------------------------------------------------ //
 
         System.out.println();
 
@@ -54,6 +74,8 @@ public class Multi_09 {
         agePerCity.subscribe().with(System.out::println);
     }
 
+    // ------------------------------------------------------------------ //
+
     static Person generate() {
         var rand = ThreadLocalRandom.current();
         return new Person(
@@ -63,6 +85,8 @@ public class Multi_09 {
     }
 
     static List<String> cities = Arrays.asList("Lyon", "Tassin La Demi Lune", "Clermont-Ferrand", "Nevers");
+
+    // ------------------------------------------------------------------ //
 
     private static class Person {
         final String identifier;
