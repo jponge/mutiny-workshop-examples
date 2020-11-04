@@ -13,8 +13,19 @@ public class _13_Multi {
     public static void main(String[] args) {
         System.out.println("⚡️ Hello world");
 
+        // -------------------------------------------------------------------------------------------------- //
+
         Multi.createFrom().items(1, 2, 3)
-                .subscribe().with(System.out::println);
+                .subscribe().with(
+                        subscription -> {
+                            System.out.println("Subscription: " + subscription);
+                            subscription.request(10);
+                        },
+                        item -> System.out.println("Item: " + item),
+                        failure -> System.out.println("Failure: " + failure.getMessage()),
+                        () -> System.out.println("Completed"));
+
+        // -------------------------------------------------------------------------------------------------- //
 
         System.out.println("----");
 
@@ -25,6 +36,8 @@ public class _13_Multi {
                 .generate(ThreadLocalRandom.current()::nextInt)
                 .limit(5)
                 .collect(Collectors.toList());
+
+        // -------------------------------------------------------------------------------------------------- //
 
         System.out.println("----");
 
