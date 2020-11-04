@@ -2,9 +2,9 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _02_groups;
 
-import io.smallrye.mutiny.Multi;
-
 import java.util.stream.Collectors;
+
+import io.smallrye.mutiny.Multi;
 
 public class _04_Multi_Event_Groups {
 

@@ -2,11 +2,11 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _06_threading;
 
+import java.util.stream.Collectors;
+
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 import io.smallrye.mutiny.helpers.BlockingIterable;
-
-import java.util.stream.Collectors;
 
 public class _04_Threading_Blocking {
 

@@ -2,9 +2,10 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _01_basics;
 
-import io.smallrye.mutiny.Multi;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
+
+import io.smallrye.mutiny.Multi;
 
 public class _14_Multi_Subscriber {
 

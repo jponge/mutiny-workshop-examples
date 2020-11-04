@@ -2,14 +2,13 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _01_basics;
 
+import static java.util.concurrent.CompletableFuture.delayedExecutor;
+import static java.util.concurrent.CompletableFuture.supplyAsync;
+
 import java.time.Duration;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
 import io.smallrye.mutiny.Uni;
-
-import static java.util.concurrent.CompletableFuture.delayedExecutor;
-import static java.util.concurrent.CompletableFuture.supplyAsync;
 
 public class _11_Uni_Delay {
 

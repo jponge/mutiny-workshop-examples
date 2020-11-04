@@ -2,10 +2,10 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _02_groups;
 
-import io.smallrye.mutiny.Uni;
-
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
+
+import io.smallrye.mutiny.Uni;
 
 public class _02_Uni_Call {
 

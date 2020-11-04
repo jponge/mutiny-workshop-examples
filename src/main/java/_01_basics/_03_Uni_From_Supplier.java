@@ -2,9 +2,9 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _01_basics;
 
-import io.smallrye.mutiny.Uni;
-
 import java.util.Random;
+
+import io.smallrye.mutiny.Uni;
 
 public class _03_Uni_From_Supplier {
 

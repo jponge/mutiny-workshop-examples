@@ -2,9 +2,9 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _01_basics;
 
-import io.smallrye.mutiny.Uni;
-
 import java.util.concurrent.atomic.AtomicLong;
+
+import io.smallrye.mutiny.Uni;
 
 public class _05_Uni_Deferred {
 

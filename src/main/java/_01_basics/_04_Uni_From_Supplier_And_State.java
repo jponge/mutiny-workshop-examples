@@ -2,9 +2,9 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _01_basics;
 
-import io.smallrye.mutiny.Uni;
-
 import java.util.concurrent.atomic.AtomicInteger;
+
+import io.smallrye.mutiny.Uni;
 
 public class _04_Uni_From_Supplier_And_State {
 

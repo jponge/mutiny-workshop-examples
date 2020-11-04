@@ -2,11 +2,7 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _04_failures;
 
-import java.io.IOException;
-import java.util.concurrent.ThreadLocalRandom;
-
 import io.smallrye.mutiny.Multi;
-import io.smallrye.mutiny.subscription.MultiEmitter;
 
 public class _11_Multi_Failure_Cancelling_Recovery {
 

@@ -2,9 +2,9 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _04_failures;
 
-import io.smallrye.mutiny.Uni;
-
 import java.io.IOException;
+
+import io.smallrye.mutiny.Uni;
 
 public class _01_Uni_Failure_Transform {
 

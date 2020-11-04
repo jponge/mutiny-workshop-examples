@@ -2,11 +2,11 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _01_basics;
 
-import io.smallrye.mutiny.Multi;
-
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import io.smallrye.mutiny.Multi;
 
 public class _13_Multi {
 

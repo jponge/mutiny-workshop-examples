@@ -2,12 +2,13 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _01_basics;
 
-import io.smallrye.mutiny.Multi;
-import io.smallrye.mutiny.subscription.MultiSubscriber;
-import org.reactivestreams.Subscription;
-
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
+
+import org.reactivestreams.Subscription;
+
+import io.smallrye.mutiny.Multi;
+import io.smallrye.mutiny.subscription.MultiSubscriber;
 
 public class _16_Multi_Control_Subscription {
 

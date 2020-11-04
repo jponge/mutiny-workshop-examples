@@ -11,7 +11,7 @@ public class _05_Uni_Failure_Retry_Bounded {
 
     public static void main(String[] args) {
         System.out.println("⚡️ Uni failure retry");
-        
+
         Uni.createFrom().emitter(emitter -> generate(emitter))
                 .onFailure().invoke(() -> System.out.println("Failed"))
                 .onFailure().retry().atMost(10)

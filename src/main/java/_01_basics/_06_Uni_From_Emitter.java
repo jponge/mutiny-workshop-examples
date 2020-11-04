@@ -2,10 +2,10 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _01_basics;
 
-import io.smallrye.mutiny.Uni;
-
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ForkJoinPool;
+
+import io.smallrye.mutiny.Uni;
 
 public class _06_Uni_From_Emitter {
 

@@ -2,10 +2,10 @@
 //DEPS io.smallrye.reactive:mutiny:0.10.1
 package _02_groups;
 
-import io.smallrye.mutiny.Uni;
-
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
+
+import io.smallrye.mutiny.Uni;
 
 public class _01_Uni_Event_Groups {
 
