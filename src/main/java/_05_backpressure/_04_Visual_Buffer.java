@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.10.1
+//DEPS io.smallrye.reactive:mutiny:0.11.0
 package _05_backpressure;
 
 import java.util.function.Consumer;
