@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.11.0
+//DEPS io.smallrye.reactive:mutiny:0.12.5
 package _03_composition_transformation;
 
 import java.util.concurrent.CountDownLatch;
