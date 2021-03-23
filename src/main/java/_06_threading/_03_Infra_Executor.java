@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.12.5
+//DEPS io.smallrye.reactive:mutiny:0.14.0
 package _06_threading;
 
 import static java.util.concurrent.CompletableFuture.supplyAsync;
