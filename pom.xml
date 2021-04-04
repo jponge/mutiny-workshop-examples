@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>11</maven.compiler.release>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-        <mutiny.version>0.14.0</mutiny.version>
+        <mutiny.version>0.15.0</mutiny.version>
     </properties>
 
     <dependencies>
