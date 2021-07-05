@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _05_backpressure;
 
 import io.smallrye.mutiny.subscription.BackPressureStrategy;
@@ -15,7 +15,7 @@ public class _01_Drop {
         System.out.println("⚡️ Back-pressure: drop");
 
         Multi.createFrom().emitter(emitter -> emitTooFast(emitter), BackPressureStrategy.ERROR)
-                .onOverflow().drop(s -> System.out.print("🚨 ")) // Comment out for some fun
+                .onOverflow().invoke(s -> System.out.print("🚨 ")).drop() // Comment out for some fun
                 .subscribe().withSubscriber(new MultiSubscriber<Object>() {
                     @Override
                     public void onSubscribe(Subscription s) {

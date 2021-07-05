@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _02_groups;
 
 import java.time.Duration;
@@ -13,7 +13,7 @@ public class _01_Uni_Event_Groups {
         System.out.println("⚡️ Uni inspect events");
 
         var result = Uni.createFrom().item("Hello")
-                .onSubscribe().invoke(sub -> System.out.println("onSubscribe " + sub))
+                .onSubscription().invoke(sub -> System.out.println("onSubscribe " + sub))
                 .onCancellation().invoke(() -> System.out.println("onCancellation"))
                 .onItem().invoke(item -> System.out.println("onItem " + item))
                 .onFailure().invoke(failure -> System.out.println("onFailure " + failure))

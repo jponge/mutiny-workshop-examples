@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _02_groups;
 
 import java.util.stream.Collectors;
@@ -12,7 +12,7 @@ public class _04_Multi_Event_Groups {
         System.out.println("⚡️ Multi inspect events");
 
         var items = Multi.createFrom().range(1, 6)
-                .onSubscribe().invoke(sub -> System.out.println("onSubscribe " + sub))
+                .onSubscription().invoke(sub -> System.out.println("onSubscribe " + sub))
                 .onRequest().invoke(count -> System.out.println("onRequest " + count))
                 .onCancellation().invoke(() -> System.out.println("onCancellation"))
                 .onItem().invoke(item -> System.out.println("onItem " + item))

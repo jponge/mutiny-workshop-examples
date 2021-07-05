@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _03_composition_transformation;
 
 import java.util.concurrent.CountDownLatch;
@@ -20,7 +20,7 @@ public class _09_Multi_Shortcuts {
 
         Multi.createFrom().range(1, 100)
                 .filter(n -> n % 2 == 0)
-                .transform().byTakingLastItems(5)
+                .select().last(5)
                 .flatMap(n -> query(n))     // try concatMap
                 .map(n -> "[" + n + "]")
                 .onCompletion().invoke(latch::countDown)

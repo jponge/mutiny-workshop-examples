@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _03_composition_transformation;
 
 import io.smallrye.mutiny.Multi;
@@ -20,8 +20,8 @@ public class _07_Multi_TransformToUni {
         CountDownLatch latch = new CountDownLatch(1);
 
         Multi.createFrom().range(1, 100)
-                .transform().byFilteringItemsWith(n -> n % 2 == 0)
-                .transform().byTakingLastItems(5)
+                .select().where(n -> n % 2 == 0)
+                .select().last(5)
                 .onItem().transformToUniAndMerge(n -> increase(n))  // try transformToUniAndConcatenate
                 .onItem().transform(n -> "[" + n + "]")
                 .onCompletion().invoke(latch::countDown)

@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _03_composition_transformation;
 
 import static java.util.concurrent.CompletableFuture.delayedExecutor;
@@ -17,8 +17,8 @@ public class _08_Multi_TransformToMulti {
         CountDownLatch latch = new CountDownLatch(1);
 
         Multi.createFrom().range(1, 100)
-                .transform().byFilteringItemsWith(n -> n % 2 == 0)
-                .transform().byTakingLastItems(5)
+                .select().where(n -> n % 2 == 0)
+                .select().last(5)
                 .onItem().transformToMultiAndMerge(n -> query(n))   // try transformToMultiAndConcatenate
                 .onItem().transform(n -> "[" + n + "]")
                 .onCompletion().invoke(latch::countDown)

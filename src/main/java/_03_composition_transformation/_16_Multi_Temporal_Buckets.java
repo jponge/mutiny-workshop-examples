@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _03_composition_transformation;
 
 import java.time.Duration;
@@ -13,7 +13,7 @@ public class _16_Multi_Temporal_Buckets {
 
         Multi.createFrom()
                 .ticks().every(Duration.ofMillis(200))
-                .groupItems().intoLists().every(Duration.ofSeconds(2))
+                .group().intoLists().every(Duration.ofSeconds(2))
                 .subscribe().with(System.out::println);
     }
 }

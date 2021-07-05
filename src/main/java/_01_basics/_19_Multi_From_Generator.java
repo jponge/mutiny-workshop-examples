@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _01_basics;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class _19_Multi_From_Generator {
                     }
                     return state;
                 })
-                .transform().byTakingFirstItems(10)
+                .select().first(10)
                 .subscribe().with(System.out::println);
     }
 

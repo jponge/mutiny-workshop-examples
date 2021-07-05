@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _03_composition_transformation;
 
 import io.smallrye.mutiny.Uni;
@@ -33,7 +33,7 @@ public class _04_Uni_Stage {
 
     private static Uni<Integer> processEvents(Uni<Integer> uni) {
         return uni
-                .onSubscribe().invoke(() -> System.out.println("onSubscribe"))
+                .onSubscription().invoke(() -> System.out.println("onSubscribe"))
                 .onItem().invoke(n -> System.out.println("item = " + n));
     }
 }

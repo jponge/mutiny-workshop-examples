@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _03_composition_transformation;
 
 import io.smallrye.mutiny.Multi;
@@ -11,7 +11,7 @@ public class _17_Multi_Disjoint {
 
         Multi.createFrom().range(0, 10)
                 .onItem().transformToMultiAndMerge(n -> Multi.createFrom().items(n, n * 2, n, n * 5, n, n * 10))
-                .groupItems().intoLists().of(3)
+                .group().intoLists().of(3)
                 .onItem().invoke(list -> System.out.println(">>> " + list))
                 .onItem().disjoint()
                 .subscribe().with(System.out::println, Throwable::printStackTrace);

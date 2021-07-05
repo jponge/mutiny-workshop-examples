@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:0.15.0
+//DEPS io.smallrye.reactive:mutiny:0.18.1
 package _03_composition_transformation;
 
 import java.util.Arrays;
@@ -34,7 +34,7 @@ public class _14_Multi_Aggregates {
         System.out.println();
 
         persons
-                .collectItems().with(Collectors.counting())
+                .collect().with(Collectors.counting())
                 .subscribe().with(count -> System.out.println("We have " + count + " persons"));
 
         // ------------------------------------------------------------------ //
@@ -42,8 +42,8 @@ public class _14_Multi_Aggregates {
         System.out.println();
 
         persons
-                .transform().byFilteringItemsWith(person -> person.city.equals("Nevers"))
-                .collectItems().asList()
+                .select().where(person -> person.city.equals("Nevers"))
+                .collect().asList()
                 .subscribe().with(list -> System.out.println("They live in Nevers: " + list));
 
         // ------------------------------------------------------------------ //
@@ -51,8 +51,8 @@ public class _14_Multi_Aggregates {
         System.out.println();
 
         persons
-                .transform().byFilteringItemsWith(person -> person.city.equals("Nevers"))
-                .collectItems().in(
+                .select().where(person -> person.city.equals("Nevers"))
+                .collect().in(
                         StringBuilder::new,
                         (acc, next) -> acc.append("\n")
                                 .append(" -> ")
@@ -64,10 +64,10 @@ public class _14_Multi_Aggregates {
         System.out.println();
 
         var agePerCity = persons
-                .groupItems().by(person -> person.city)
+                .group().by(person -> person.city)
                 .onItem().transformToUni(group -> {
                     String city = group.key();
-                    Uni<Double> avg = group.collectItems().with(Collectors.averagingInt(person -> person.age));
+                    Uni<Double> avg = group.collect().with(Collectors.averagingInt(person -> person.age));
                     return avg.onItem().transform(res -> "Average age in " + city + " is " + res);
                 }).merge();
 
