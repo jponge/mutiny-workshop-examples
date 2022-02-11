@@ -17,7 +17,7 @@ public class _03_Context {
         List<String> list = Multi.createFrom().range(1, 10)
                 .withContext((multi, ctx) -> multi.onItem().invoke(n -> ctx.put("n", n)))
                 .select().where(n -> n % 2 == 0)
-                .withContext((multi, ctx) -> multi.onItem().transform(n -> n + "::" + ctx.get("n")))
+                .withContext((multi, ctx) -> multi.onItem().transform(n -> n + "::" + ctx.get("n") + " @foo -> " + ctx.get("foo")))
                 .collect().asList()
                 .awaitUsing(context).indefinitely();
 
