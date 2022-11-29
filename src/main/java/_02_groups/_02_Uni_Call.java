@@ -1,11 +1,11 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _02_groups;
+
+import io.smallrye.mutiny.Uni;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
-
-import io.smallrye.mutiny.Uni;
 
 public class _02_Uni_Call {
 

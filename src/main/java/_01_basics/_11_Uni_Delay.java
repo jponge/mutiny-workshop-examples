@@ -1,14 +1,14 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _01_basics;
 
-import static java.util.concurrent.CompletableFuture.delayedExecutor;
-import static java.util.concurrent.CompletableFuture.supplyAsync;
+import io.smallrye.mutiny.Uni;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-import io.smallrye.mutiny.Uni;
+import static java.util.concurrent.CompletableFuture.delayedExecutor;
+import static java.util.concurrent.CompletableFuture.supplyAsync;
 
 public class _11_Uni_Delay {
 

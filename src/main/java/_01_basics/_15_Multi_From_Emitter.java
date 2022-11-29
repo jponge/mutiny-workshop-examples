@@ -1,12 +1,12 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _01_basics;
+
+import io.smallrye.mutiny.Multi;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-
-import io.smallrye.mutiny.Multi;
 
 public class _15_Multi_From_Emitter {
 

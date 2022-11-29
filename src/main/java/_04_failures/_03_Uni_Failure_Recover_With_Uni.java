@@ -1,10 +1,10 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _04_failures;
 
-import java.io.IOException;
-
 import io.smallrye.mutiny.Uni;
+
+import java.io.IOException;
 
 public class _03_Uni_Failure_Recover_With_Uni {
 

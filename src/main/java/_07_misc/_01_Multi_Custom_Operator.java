@@ -1,13 +1,13 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _07_misc;
-
-import java.util.concurrent.ThreadLocalRandom;
 
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.operators.multi.AbstractMultiOperator;
 import io.smallrye.mutiny.operators.multi.MultiOperatorProcessor;
 import io.smallrye.mutiny.subscription.MultiSubscriber;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 public class _01_Multi_Custom_Operator {
 

@@ -1,11 +1,11 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _02_groups;
+
+import io.smallrye.mutiny.Uni;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
-
-import io.smallrye.mutiny.Uni;
 
 public class _01_Uni_Event_Groups {
 

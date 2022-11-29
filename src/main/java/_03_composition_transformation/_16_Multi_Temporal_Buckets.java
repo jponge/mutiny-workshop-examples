@@ -1,10 +1,10 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _03_composition_transformation;
 
-import java.time.Duration;
-
 import io.smallrye.mutiny.Multi;
+
+import java.time.Duration;
 
 public class _16_Multi_Temporal_Buckets {
 

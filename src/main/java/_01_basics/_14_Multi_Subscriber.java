@@ -1,11 +1,11 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _01_basics;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
 import io.smallrye.mutiny.Multi;
+
+import java.util.concurrent.Flow.Subscriber;
+import java.util.concurrent.Flow.Subscription;
 
 public class _14_Multi_Subscriber {
 

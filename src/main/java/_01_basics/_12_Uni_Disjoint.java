@@ -1,10 +1,10 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _01_basics;
 
-import java.util.List;
-
 import io.smallrye.mutiny.Uni;
+
+import java.util.List;
 
 public class _12_Uni_Disjoint {
 

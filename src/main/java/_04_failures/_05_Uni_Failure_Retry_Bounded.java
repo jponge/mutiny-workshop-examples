@@ -1,11 +1,11 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _04_failures;
-
-import java.util.concurrent.ThreadLocalRandom;
 
 import io.smallrye.mutiny.Uni;
 import io.smallrye.mutiny.subscription.UniEmitter;
+
+import java.util.concurrent.ThreadLocalRandom;
 
 public class _05_Uni_Failure_Retry_Bounded {
 

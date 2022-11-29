@@ -1,10 +1,10 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:1.3.1
+//DEPS io.smallrye.reactive:mutiny:2.0.0
 package _02_groups;
 
-import java.util.stream.Collectors;
-
 import io.smallrye.mutiny.Multi;
+
+import java.util.stream.Collectors;
 
 public class _04_Multi_Event_Groups {
 
