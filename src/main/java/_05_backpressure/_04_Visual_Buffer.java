@@ -1,5 +1,5 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
-//DEPS io.smallrye.reactive:mutiny:2.3.1
+//DEPS io.smallrye.reactive:mutiny:2.4.0
 package _05_backpressure;
 
 import io.smallrye.mutiny.Multi;
